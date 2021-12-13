@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Day1 {
+public class Day1Part1 {
 
   public static void main(String[] args) {
     Integer last = null;
