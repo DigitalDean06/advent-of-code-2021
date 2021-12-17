@@ -7,23 +7,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Day15Part1 {
+public class Day15Part2 {
 
   private static final Map<Position, Integer> cache = new HashMap<>();
 
   public static void main(String[] args) {
     try {
       List<String> lines = AOC.get(15);
-      int[][] map = new int[lines.get(0).length()][lines.size()];
-      for (int i = 0; i < lines.size(); i++) {
-        for (int j = 0; j < lines.get(i).length(); j++) {
-          map[j][i] = Integer.parseInt(String.valueOf(lines.get(i).charAt(j)));
+      int[][] map = new int[lines.get(0).length() * 5][lines.size() * 5];
+      for (int a = 0; a < 5; a++) {
+        for (int b = 0; b < 5; b++) {
+          for (int i = 0; i < lines.size(); i++) {
+            for (int j = 0; j < lines.get(i).length(); j++) {
+              map[j + a * lines.get(i).length()][i + b * lines.size()] = wrap(Integer.parseInt(String.valueOf(lines.get(i).charAt(j))) + a + b);
+            }
+          }
         }
       }
       System.out.println(brute(map, 0, 0, 0) - map[0][0]);
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public static int wrap(int i) {
+    return i / 10 + i % 10;
   }
 
   public static int brute(int[][] map, int x, int y, int n) {
