@@ -1,4 +1,4 @@
-package com.deantee.aoc;
+package com.deantee.aoc.day15;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Day15 {
+public class Day15Part1 {
 
   public static void main(String[] args) {
     try {

@@ -1,4 +1,4 @@
-package com.deantee.aoc;
+package com.deantee.aoc.day4;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Day4 {
+public class Day4Part1 {
 
   // 0 -> 3 - 7
   // 1 -> 9 - 13

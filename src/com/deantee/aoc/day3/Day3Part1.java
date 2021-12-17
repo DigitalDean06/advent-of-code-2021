@@ -1,11 +1,11 @@
-package com.deantee.aoc;
+package com.deantee.aoc.day3;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class Day3 {
+public class Day3Part1 {
 
   public static void main(String[] args) {
     try {

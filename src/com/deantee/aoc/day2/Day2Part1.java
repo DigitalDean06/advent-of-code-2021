@@ -1,10 +1,10 @@
-package com.deantee.aoc;
+package com.deantee.aoc.day2;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Day2 {
+public class Day2Part1 {
 
   public static void main(String[] args) {
     int horizontal = 0;

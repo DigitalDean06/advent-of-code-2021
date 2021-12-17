@@ -1,4 +1,4 @@
-package com.deantee.aoc;
+package com.deantee.aoc.day3;
 
 import java.io.IOException;
 import java.nio.file.Files;

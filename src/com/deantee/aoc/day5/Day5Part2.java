@@ -1,4 +1,4 @@
-package com.deantee.aoc;
+package com.deantee.aoc.day5;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Day5 {
+public class Day5Part2 {
 
   public static void main(String[] args) {
     try {
@@ -22,20 +22,30 @@ public class Day5 {
         int y1 = Integer.parseInt(from[1]);
         int x2 = Integer.parseInt(to[0]);
         int y2 = Integer.parseInt(to[1]);
-        if (x1 > x2) {
-          int temp = x1;
-          x1 = x2;
-          x2 = temp;
-        }
-        if (y1 > y2) {
-          int temp = y1;
-          y1 = y2;
-          y2 = temp;
-        }
-        if (x1 != x2 && y1 != y2) continue;
-        for (int x = x1; x <= x2; x++) {
-          for (int y = y1; y <= y2; y++) {
-            posMap.put(new Position(x, y), posMap.getOrDefault(new Position(x, y), 0) + 1);
+        if (x1 != x2 && y1 != y2) {
+          int n = x2 - x1;
+          int n2 = y2 - y1;
+          for (int i = 0; i <= Math.abs(n); i++) {
+            int j = i;
+            if (n < 0) j *= -1;
+            Position key = new Position(x1 + j, y1 + ((n >= 0) == (n2 >= 0) ? j : -j));
+            posMap.put(key, posMap.getOrDefault(key, 0) + 1);
+          }
+        } else {
+          if (x1 > x2) {
+            int temp = x1;
+            x1 = x2;
+            x2 = temp;
+          }
+          if (y1 > y2) {
+            int temp = y1;
+            y1 = y2;
+            y2 = temp;
+          }
+          for (int x = x1; x <= x2; x++) {
+            for (int y = y1; y <= y2; y++) {
+              posMap.put(new Position(x, y), posMap.getOrDefault(new Position(x, y), 0) + 1);
+            }
           }
         }
       }
