@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class LanternFish {
-  private long amount;
   private final int timer;
+  private long amount;
 
   private LanternFish(int timer, long amount) {
     this.timer = timer;

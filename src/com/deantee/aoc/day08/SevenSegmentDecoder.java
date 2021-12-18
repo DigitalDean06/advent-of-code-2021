@@ -62,16 +62,6 @@ public class SevenSegmentDecoder {
     }
   }
 
-  public int decode(String input) {
-    List<Character> characters = toCharacterList(input);
-    List<Integer> keys = map.keySet().stream().filter(integer -> map.get(integer).size() == characters.size()).toList();
-    if (keys.isEmpty()) throw new IllegalArgumentException("Invalid input");
-    for (int key : keys) {
-      if (map.get(key).containsAll(characters)) return key;
-    }
-    throw new IllegalArgumentException("Invalid input");
-  }
-
   private static List<Character> toCharacterList(String string) {
     return string.chars().mapToObj(value -> (char) value).toList();
   }
@@ -82,5 +72,15 @@ public class SevenSegmentDecoder {
       if (characters.contains(c)) ++n;
     }
     return n;
+  }
+
+  public int decode(String input) {
+    List<Character> characters = toCharacterList(input);
+    List<Integer> keys = map.keySet().stream().filter(integer -> map.get(integer).size() == characters.size()).toList();
+    if (keys.isEmpty()) throw new IllegalArgumentException("Invalid input");
+    for (int key : keys) {
+      if (map.get(key).containsAll(characters)) return key;
+    }
+    throw new IllegalArgumentException("Invalid input");
   }
 }
