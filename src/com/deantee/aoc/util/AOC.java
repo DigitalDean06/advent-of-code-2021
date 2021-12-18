@@ -1,3 +1,7 @@
+/*
+ * https://adventofcode.com/
+ */
+
 package com.deantee.aoc.util;
 
 import java.io.IOException;

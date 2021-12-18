@@ -1,3 +1,7 @@
+/*
+ * https://adventofcode.com/2021/day/6
+ */
+
 package com.deantee.aoc.day06;
 
 import com.deantee.aoc.util.AOC;
