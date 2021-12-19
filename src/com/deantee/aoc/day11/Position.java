@@ -1,3 +1,7 @@
+/*
+ * https://adventofcode.com/2021/day/11
+ */
+
 package com.deantee.aoc.day11;
 
 import java.util.Objects;
