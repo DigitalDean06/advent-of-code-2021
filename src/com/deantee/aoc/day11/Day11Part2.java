@@ -9,7 +9,6 @@ import com.deantee.aoc.util.AOC;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Day11Part2 {
 
@@ -70,20 +69,5 @@ public class Day11Part2 {
     for (int j = 0; j < map[0].length; j++)
       for (int i = map.length - 1; i >= 0; i--) if (map[i][j] >= 10) flashes.add(new Position(i, j));
     return flashes;
-  }
-
-  private static record Position(int x, int y) {
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-      Position position = (Position) o;
-      return x == position.x && y == position.y;
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(x, y);
-    }
   }
 }
