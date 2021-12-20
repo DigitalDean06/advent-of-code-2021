@@ -41,7 +41,8 @@ public class Cave {
     int n = 0;
     for (Cave connectedCave : connectedCaves) {
       if (connectedCave.name.equals("start")) continue;
-      if (visitedCaves.getOrDefault(connectedCave, 0) >= 1 && connectedCave.isSmallCave() && containRevisitedSmallCave(visitedCaves)) continue;
+      if (visitedCaves.getOrDefault(connectedCave, 0) >= 1 && connectedCave.isSmallCave() && containRevisitedSmallCave(visitedCaves))
+        continue;
       if (connectedCave.name.equals("end")) n += 1;
       else n += connectedCave.brute2(new HashMap<>(visitedCaves));
     }
